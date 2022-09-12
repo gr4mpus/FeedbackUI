@@ -1,18 +1,10 @@
-import { useState } from "react";
-function FeedbackItem() {
-  let [rating, setRating] = useState(7);
-  const [text, setText] = useState("This is an example of a feeback Item");
-  const handleClick = () => {
-    setRating((prev) => {
-      return prev + 1;
-    });
-  };
+import Card from "./shared/Card";
+function FeedbackItem({ item }) {
   return (
-    <div className="card">
-      <div className="num-display">{rating}</div>
-      <div className="text-display">{text}</div>
-      <button onClick={handleClick}>Something</button>
-    </div>
+    <Card reverse={true}>
+      <div className="num-display">{item.rating}</div>
+      <div className="text-display">{item.text}</div>
+    </Card>
   );
 }
 
